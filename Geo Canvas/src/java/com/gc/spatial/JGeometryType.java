@@ -26,10 +26,6 @@ import org.hibernate.usertype.UserType;
  * doesn't work. The static load returns a JGeometry that can't be cast to the
  * sub-class)
  *
- * @author Joel Schuster - The NAVSYS Corporation
- * @version 1.0
- * @see com.navsys.spatial.OracleSpacialDialect
- *
  */
 public class JGeometryType implements UserType, Serializable {
     private static final long serialVersionUID = 1L;

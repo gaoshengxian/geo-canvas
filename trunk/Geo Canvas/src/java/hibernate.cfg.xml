@@ -2,10 +2,12 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.dialect">com.gc.spatial.OracleSpatialDialect</property>
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/orcl</property>
     <property name="hibernate.connection.username">DEV</property>
     <property name="hibernate.connection.password">admin</property>
+    <mapping resource="com/hbm/entity/ColaMarkets.hbm.xml"/>
+    <mapping resource="com/hbm/entity/TClob.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -11,32 +11,21 @@ function UIManager(width, height)
     this.currentBodyWidth = 0;
     this.currentBodyHeight = 0;
     this.scrollerWidth = this.getScrollerWidth();
-
-    // self referencing pointer
-    var self = this;
-    // Attach the event handler to resize event.
-    $(window).resize(function(){
-        self.adjustScreenDimension();
-    });
 }
 
 UIManager.prototype.adjustScreenDimension = function()
 {
     // Initializing the screen's width & height to recommended settings.
-    if($("body").width() < this.defaultWidth - this.scrollerWidth)
+    if($("body").width() < this.defaultWidth)
         $("body").width(this.defaultWidth);
     else
-        $("body").width($(document).width() - this.scrollerWidth);
+        $("body").width($(document).width());
 
     this.currentBodyWidth = $("body").width();
 
-    if($("body").height() < this.defaultHeight - this.scrollerWidth)
+    if($("body").height() < this.defaultHeight)
     {
         $("body").height(this.defaultHeight);
-        // When the body width is greater than or equal to defautl width but the height is smaller than default,
-        // the browser will display scroll bar so we need to deduct the width of scroll bar
-        // from existing body's width.
-        $("body").width(this.currentBodyWidth - this.scrollerWidth);
     }
     else
         $("body").height($(document).height());
@@ -46,8 +35,8 @@ UIManager.prototype.adjustScreenDimension = function()
     // Calculate the offset widht & height after the screen has been resized.
     // E.g the default width is 1000px and now the actual width of body is 1200px,
     // then the offset width is 200px.
-    this.offsetWidth = this.currentBodyWidth - this.defaultWidth;
-    this.offsetHeight = this.currentBodyHeight - this.defaultHeight;
+    this.offsetWidth = this.currentBodyWidth - this.defaultWidth ;
+    this.offsetHeight = this.currentBodyHeight - this.defaultHeight ;
 };
 
 UIManager.prototype.getScrollerWidth = function()

@@ -19,6 +19,7 @@ body {
     font-family: tahoma,arial;
     font-size : 11px;
     margin : 0px;
+    overflow: hidden;
 }
 
 #content {
@@ -26,12 +27,24 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background: #c9c9c9;
     margin: 0px;
     padding: 0px;
+}
+
+#content table {
+    width: 100%;
+    height: 100%;
+}
+
+#tabs {
+    height: 100%;
+    width: 300px;
+    float: left;
 }
 
 #map {
     float: left;
     display: block;
+    width: 100%;
+    height: 100%;
 }

@@ -13,10 +13,16 @@
         <script type="text/javascript" src="js/ui/app-ui-manager.js"></script>
         <script type="text/javascript" src="js/util/ui-manager.js"></script>
         <script type="text/javascript" src="js/util/paint-manager.js"></script>
+        <script type="text/javascript" src="js/grid/grid.locale-en.js"></script>
+        <script type="text/javascript" src="js/grid/jquery.jqGrid.min.js"></script>
+
         <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA5ayIGld0GtcybqZ7ixlQyRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQtwkMYh7bhwXzqy9_tnvOA-MOnAQ" type="text/javascript"></script>
         <script>
             $(document).ready(function(){
-                             
+                // Init UI
+//                var appManager = new AppUIManager();
+//                appManager.setupUI();
+
                 // Load google map.
                 var map = new GMap2($("#map").get(0));
                 var burnsvilleMN = new GLatLng(44.797916,-93.278046);
@@ -24,7 +30,11 @@
 
                 // Tabs
                 $('#tabs').tabs();
-            })
+
+                // Buttons
+                $('.btn').button();
+
+              
         </script>
     </head>
     <body>
@@ -72,11 +82,39 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            Marker is draggable : 
+                                        </td>
+                                        <td colspan="2">
+                                            <input type="checkbox" name="isDraggable" value="true"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            Title of the marker :
+                                        </td>
+                                        <td colspan="2">
+                                            <input type="text" name="title" value="" maxlength="30"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+
+                                        </td>
+                                        <td colspan="2">
+                                            <input type="button" class="btn" name="Draw" value="Draw"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td colspan="4">
-                                            Marker is draggable : <input type="checkbox" name="isDraggable" value="true"/>
+                                            <br/>
+                                            
                                         </td>
                                     </tr>
                                 </table>
+
+                                <table id="jqGridTbl"></table>
+    <div id="prowed2"></div>
                             </div>
                             <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
                             <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>

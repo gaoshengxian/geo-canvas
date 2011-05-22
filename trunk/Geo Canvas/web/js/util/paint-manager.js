@@ -53,9 +53,17 @@ PaintManager.prototype.paintMarker = function(options)
             GEvent.removeListener(cursorListener);
             self.map.getDragObject().setDraggableCursor("default");
 
+            var tinyIcon = new GIcon();
+            tinyIcon.image = iconUrl;
+            tinyIcon.iconSize = new GSize(32, 32);
+            tinyIcon.shadowSize = new GSize(32, 32);
+            tinyIcon.iconAnchor = new GPoint(14, 32);
+            tinyIcon.infoWindowAnchor = new GPoint(14, 1);
+
+
             var marker = new GMarker(latlng,
             {
-                icon: iconUrl,
+                icon: tinyIcon,
                 title: title,
                 draggable: draggable
             });

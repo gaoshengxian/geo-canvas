@@ -22,6 +22,16 @@ body {
     overflow: hidden;
 }
 
+div {
+    font-family: tahoma,arial;
+    font-size : 11px;
+}
+
+tr,td {
+    font-family: tahoma,arial;
+    font-size : 11px;
+}
+
 .btn {
 
 }
@@ -40,8 +50,6 @@ body {
 }
 
 #content .marker-table {
-    font-family: tahoma,arial;
-    font-size : 11px;
     width: 100%;
     border: none;
     text-align: left;

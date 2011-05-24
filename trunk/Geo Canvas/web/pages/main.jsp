@@ -9,10 +9,14 @@
 
         <link type="text/css" href="css/styles.css" rel="stylesheet" />
         <link type="text/css" href="css/ocean/ui-ocean.css" rel="stylesheet" />
+        <link type="text/css" href="css/ui.jqgrid.css" rel="stylesheet" />
 
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/grid/grid.locale-en.js"></script>
+        <script type="text/javascript" src="js/grid/jqgrid.js"></script>
         <script type="text/javascript" src="js/util/map-manager.js"></script>
+        <script type="text/javascript" src="js/ui/tabs/marker-tab-ui.js"></script>
 
         <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA5ayIGld0GtcybqZ7ixlQyRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQtwkMYh7bhwXzqy9_tnvOA-MOnAQ" type="text/javascript"></script>
         <script>
@@ -36,7 +40,10 @@
 
                 // Buttons
                 $('.btn').button();
-            });
+
+                // To load the Grid in marker tab.
+                loadMarkerTabUI();
+            }); // End of jQuery main function.
 
             function drawMarker()
             {

@@ -23,12 +23,10 @@ body {
 }
 
 .btn {
-    
+
 }
 
 #content {
-    float: left;
-    display: block;
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -41,7 +39,7 @@ body {
     border: none;
 }
 
-#content table.marker-table {
+#content .marker-table {
     font-family: tahoma,arial;
     font-size : 11px;
     width: 100%;
@@ -49,9 +47,14 @@ body {
     text-align: left;
 }
 
-#content table.marker-table .marker-table-icon {
+#content .marker-table .marker-table-icon {
     text-align: center;
     width: 25%;
+}
+
+#content .marker-table .marker-table-labels {
+    text-align: right;
+    font-weight: bold;
 }
 
 #tabs {

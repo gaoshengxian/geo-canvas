@@ -33,12 +33,11 @@ function loadMarkerTabUI()
             pgtext : "Page {0} of {1}"
         },
         datatype: "local",
-        height: 150,
-        rowNum: 5,
+        rowNum: 15,
         rowList: [5,10,15],
-        colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+        colNames:['Unique Id','Title', 'Coordinate', 'Color','Tax','Total','Notes'],
         colModel:[
-            {name:'id',index:'id',width:60,sorttype:"int"},
+            {name:'id',index:'id',width:60,sorttype:"int",hidden:true},
             {name:'invdate',index:'invdate',width:90,sorttype:"date"},
             {name:'name',index:'name',width:100},
             {name:'amount',index:'amount',width:80,align:"right",sorttype:"float"},
@@ -53,11 +52,12 @@ function loadMarkerTabUI()
         shrinkToFit: false,
         width: 280,
         viewrecords: false,
+        hidegrid: false,
         pagerpos: "center"
     });
 
     for(var i=0;i<=mydata.length;i++) 
         jQuery("#grid-marker").jqGrid('addRowData',i+1,mydata[i]);
     
-    jQuery("#grid-marker").setGridParam({rowNum: 5}).trigger("reloadGrid");
+    jQuery("#grid-marker").setGridParam({rowNum: 15}).trigger("reloadGrid");
 }

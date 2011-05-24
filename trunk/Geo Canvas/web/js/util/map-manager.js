@@ -5,7 +5,7 @@
  *  you clicked is inside the polygon, then you can't not get latlng for your clicked point. Using this javascript,
  *  that problem is solved. You need to use jQuery in your application to be able to import this javascript.
  */
-function PaintManager(gmap)
+function MapManager(gmap)
 {
     this.map = gmap;
     this.onCompletePaintingMarker = null;
@@ -22,7 +22,7 @@ function PaintManager(gmap)
     });
 }
 
-PaintManager.prototype.paintMarker = function(options)
+MapManager.prototype.paintMarker = function(options)
 {
     var title = "Unknown";
     var iconUrl = null;
@@ -76,7 +76,7 @@ PaintManager.prototype.paintMarker = function(options)
     });
 };
 
-PaintManager.prototype.paintLine = function(options)
+MapManager.prototype.paintLine = function(options)
 {
     var borderColor = "#ff0000";
     var borderOpacity = 0.8;
@@ -132,7 +132,7 @@ PaintManager.prototype.paintLine = function(options)
     });
 };
 
-PaintManager.prototype.paintPolygon = function(options)
+MapManager.prototype.paintPolygon = function(options)
 {
     var borderColor = "#ff0000";
     var borderOpacity = 0.8;

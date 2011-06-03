@@ -5,6 +5,8 @@
 
 function loadMarkerTabUI()
 {
+    alert($("#grid-wrapper").height())
+
     var mydata = [
         {id:"1",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
         {id:"2",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
@@ -46,12 +48,12 @@ function loadMarkerTabUI()
             {name:'note',index:'note',width:150,sortable:false}
         ],
         pager: "#grid-marker-nav",
-        viewrecords: true,
         caption: "The information of Markers on the Map.",
         autowidth: true,
         shrinkToFit: false,
         width: 280,
         viewrecords: false,
+        height: $("#grid-wrapper").height() - 200,
         hidegrid: false,
         pagerpos: "center"
     });

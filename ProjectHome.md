@@ -1,0 +1,1 @@
+The purpose of this project is to learn Oracle Spatial. User will plot the markers and shapes on the google map and these data will be saved in spatial data format using Hibernate Spatial API.
